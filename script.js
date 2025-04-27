@@ -210,6 +210,13 @@ function modificarValores(event){
     event.preventDefault() //Detiene la accion de refrescar
      
     let aparece = document.getElementById("contenedor-input")
+    let aparece2 = document.getElementById("contenedor-input2")
+    let aparece3 = document.getElementById("contenedor-input3")
+    let aparece4 = document.getElementById("contenedor-input4")
+    let aparece5 = document.getElementById("contenedor-input5")
+    let aparece6 = document.getElementById("contenedor-input6")
+    let aparece7 = document.getElementById("contenedor-input7")
+    let aparece8 = document.getElementById("contenedor-input8")
 
     if(aparece.innerHTML.includes("<fieldset>")){
         hielitosObject.fresa = document.getElementById("fresa").value
@@ -217,59 +224,86 @@ function modificarValores(event){
         arrayCantidades.push(cantidadFresa)
     } else if(!(aparece.innerHTML.includes("<fieldset>"))){
         document.getElementById("contenedor-input").innerHTML = ""
+        hielitosObject.fresa = 0
     }
 
+   /*if(hielitosObject.fresa == "0"){
+        document.getElementById("total-fresa").innerHTML = ""
+    }*/
 
-    hielitosObject.oreo = document.getElementById("oreo").value
-    cantidadOreo = Number(hielitosObject.oreo)
-
-
-    hielitosObject.jamaica  = document.getElementById("jamaica").value
-    cantidadJamaica = Number(hielitosObject.jamaica)
-
-
-    hielitosObject.rompope  = document.getElementById("rompope").value
-    cantidadRompope = Number(hielitosObject.rompope)
-
-
-    hielitosObject.limon  = document.getElementById("limon").value
-    cantidadLimon = Number(hielitosObject.limon)
-
-
-    hielitosObject.mango  = document.getElementById("mango").value
-    cantidadMango = Number(hielitosObject.mango)
-
-
-    hielitosObject.maria  = document.getElementById("maria").value
-    cantidadMaria = Number(hielitosObject.maria)
-
-
-    hielitosObject.coco  = document.getElementById("coco").value
-    cantidadCoco = Number(hielitosObject.coco)
-
-
+    if(aparece2.innerHTML.includes("<fieldset>")){
+        hielitosObject.oreo = document.getElementById("oreo").value
+        cantidadOreo = Number(hielitosObject.oreo)
         arrayCantidades.push(cantidadOreo)
-    
+    } else if(!(aparece2.innerHTML.includes("<fieldset>"))){
+        document.getElementById("contenedor-input2").innerHTML = ""
+        hielitosObject.oreo = 0
+    }
+
+    if(aparece3.innerHTML.includes("<fieldset>")){
+        hielitosObject.jamaica  = document.getElementById("jamaica").value
+        cantidadJamaica = Number(hielitosObject.jamaica)
         arrayCantidades.push(cantidadJamaica)
-    
+    } else if(!(aparece3.innerHTML.includes("<fieldset>"))){
+        document.getElementById("contenedor-input3").innerHTML = ""
+        hielitosObject.jamaica = 0
+    }
+
+    if(aparece4.innerHTML.includes("<fieldset>")){
+        hielitosObject.rompope  = document.getElementById("rompope").value
+        cantidadRompope = Number(hielitosObject.rompope)
         arrayCantidades.push(cantidadRompope)
-    
+    } else if(!(aparece4.innerHTML.includes("<fieldset>"))){
+        document.getElementById("contenedor-input4").innerHTML = ""
+        hielitosObject.rompope = 0
+    }
+
+    if(aparece5.innerHTML.includes("<fieldset>")){
+        hielitosObject.limon  = document.getElementById("limon").value
+        cantidadLimon = Number(hielitosObject.limon)
         arrayCantidades.push(cantidadLimon)
-    
+    } else if(!(aparece5.innerHTML.includes("<fieldset>"))){
+        document.getElementById("contenedor-input5").innerHTML = ""
+        hielitosObject.limon = 0
+    }
+
+    if(aparece6.innerHTML.includes("<fieldset>")){
+        hielitosObject.mango  = document.getElementById("mango").value
+        cantidadMango = Number(hielitosObject.mango)
         arrayCantidades.push(cantidadMango)
+    } else if(!(aparece6.innerHTML.includes("<fieldset>"))){
+        document.getElementById("contenedor-input6").innerHTML = ""
+        hielitosObject.mango = 0
+    }
     
+    if(aparece7.innerHTML.includes("<fieldset>")){
+        hielitosObject.maria  = document.getElementById("maria").value
+        cantidadMaria = Number(hielitosObject.maria)
         arrayCantidades.push(cantidadMaria)
-    
+    } else if(!(aparece7.innerHTML.includes("<fieldset>"))){
+        document.getElementById("contenedor-input7").innerHTML = ""
+        hielitosObject.maria = 0
+    }
+
+    if(aparece8.innerHTML.includes("<fieldset>")){
+        hielitosObject.coco  = document.getElementById("coco").value
+        cantidadCoco = Number(hielitosObject.coco)
         arrayCantidades.push(cantidadCoco)
-
-
+    } else if(!(aparece8.innerHTML.includes("<fieldset>"))){
+        document.getElementById("contenedor-input8").innerHTML = ""
+        hielitosObject.coco = 0
+    }
+        
     let suma = 0
     for(let i = 0; i < arrayCantidades.length; i++){
         suma += arrayCantidades[i]*20
     }
+
     console.log(arrayCantidades)
+
     hielitosObject.suma = suma   //(cantidadFresa + cantidadOreo + cantidadJamaica + cantidadRompope + cantidadLimon + cantidadMango + cantidadMaria + cantidadCoco)
     console.log(hielitosObject)
+
     crearRecibo()
 }
 
