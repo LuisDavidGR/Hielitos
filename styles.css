@@ -1,0 +1,72 @@
+body{
+    background-color: #d5bf86;
+    font-family: sans-serif;
+}
+form{
+    background-color: #f1f0cc;
+    border-radius: 7px;
+}
+fieldset{
+    border: 1px solid #000;
+    border-radius: 7px;
+    margin: 10px;
+}
+
+legend{
+    text-align: center;
+}
+
+input{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid;
+    text-align: center;
+    width: 30%;
+}
+
+.nombre-seleccion{
+    margin: 0;
+}
+
+.seleccion-hielito{
+    margin: 0;
+    width: 40px;
+}
+
+.input-focus:focus{
+    outline: unset;
+    /*outline: 2px solid #000;*/
+    border: unset;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+.boton{
+    background-color: #007ea7;
+    color: #fff;
+    width: 120px;
+    height: 35px;
+    margin: 10px 0 10px 6px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    font-size: 16px;
+}
+
+#borrar{
+    background-color: red;
+}
+
+.card{
+    border: 2px solid #000;
+    border-radius: 15px;
+    width: 50%;
+    height: 250px;
+    background-color: #fff;
+}
+
+.card-title{
+    text-align: center;
+    margin-left: 0;
+    font-size: 20px;
+}
+
