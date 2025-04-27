@@ -69,7 +69,7 @@ Hielitos de galleta maria vendidos: ${hielitosObject.maria}
 Hielitos de coco vendidos: ${hielitosObject.coco}
 </div>
 <div>
-${hielitosObject.suma}
+Total vendidos: ${hielitosObject.suma}
 </div>
 </p>
 <button class="btn btn-primary" onclick="eventoClick(event)"> Descargar</button>
@@ -200,35 +200,76 @@ function crearInput8(){
 }
 // FIN DE CREACION DE INPUTS  
 
-
+let arrayCantidades = []
 
 // PONER VALORES EN LOS INPUTS
 function modificarValores(event){
     //console.log(event)
-    
+    arrayCantidades = []
+
     event.preventDefault() //Detiene la accion de refrescar
-    
+     
+    let aparece = document.getElementById("contenedor-input")
 
-    hielitosObject.fresa = document.getElementById("fresa").value
-    hielitosObject.oreo  = document.getElementById("oreo").value
-    hielitosObject.jamaica  = document.getElementById("jamaica").value
-    hielitosObject.rompope  = document.getElementById("rompope").value
-    hielitosObject.limon  = document.getElementById("limon").value
-    hielitosObject.mango  = document.getElementById("mango").value
-    hielitosObject.maria  = document.getElementById("maria").value
-    hielitosObject.coco  = document.getElementById("coco").value
+    if(aparece.innerHTML.includes("<fieldset>")){
+        hielitosObject.fresa = document.getElementById("fresa").value
+        cantidadFresa = Number(hielitosObject.fresa)
+        arrayCantidades.push(cantidadFresa)
+    } else if(!(aparece.innerHTML.includes("<fieldset>"))){
+        document.getElementById("contenedor-input").innerHTML = ""
+    }
 
-    cantidadFresa = Number(hielitosObject.fresa)
+
+    hielitosObject.oreo = document.getElementById("oreo").value
     cantidadOreo = Number(hielitosObject.oreo)
+
+
+    hielitosObject.jamaica  = document.getElementById("jamaica").value
     cantidadJamaica = Number(hielitosObject.jamaica)
+
+
+    hielitosObject.rompope  = document.getElementById("rompope").value
     cantidadRompope = Number(hielitosObject.rompope)
+
+
+    hielitosObject.limon  = document.getElementById("limon").value
     cantidadLimon = Number(hielitosObject.limon)
+
+
+    hielitosObject.mango  = document.getElementById("mango").value
     cantidadMango = Number(hielitosObject.mango)
+
+
+    hielitosObject.maria  = document.getElementById("maria").value
     cantidadMaria = Number(hielitosObject.maria)
+
+
+    hielitosObject.coco  = document.getElementById("coco").value
     cantidadCoco = Number(hielitosObject.coco)
+
+
+        arrayCantidades.push(cantidadOreo)
     
+        arrayCantidades.push(cantidadJamaica)
     
-    hielitosObject.suma = "Total: "+(cantidadFresa*20 + cantidadOreo*20 + cantidadJamaica*20 + cantidadRompope*20+ cantidadLimon*20+cantidadMango*20+cantidadMaria*20+cantidadCoco*20)
+        arrayCantidades.push(cantidadRompope)
+    
+        arrayCantidades.push(cantidadLimon)
+    
+        arrayCantidades.push(cantidadMango)
+    
+        arrayCantidades.push(cantidadMaria)
+    
+        arrayCantidades.push(cantidadCoco)
+
+
+    let suma = 0
+    for(let i = 0; i < arrayCantidades.length; i++){
+        suma += arrayCantidades[i]*20
+    }
+    console.log(arrayCantidades)
+    hielitosObject.suma = suma   //(cantidadFresa + cantidadOreo + cantidadJamaica + cantidadRompope + cantidadLimon + cantidadMango + cantidadMaria + cantidadCoco)
+    console.log(hielitosObject)
     crearRecibo()
 }
 
@@ -239,20 +280,10 @@ function eliminarValores(event){
 
 // OBTENER EL BOOLEANO DE UN CHECKBOX
 
-/*  FUNCION SEMI-REMPLAZADA PARA LOGRAR PONER LOS INPUTS EN EL FORM
-function buscarSeleccion(event){
-    
-    let verificar = document.getElementById("seleccionar-fresa")
-    //console.log(verificar.checked)
-    if(verificar.checked == true){
-        crearInput()
-    }
 
-}*/
 
 //  FIN DE OBTENER EL BOOLEANO DE UN CHECKBOX
 
-//let verificar = document.getElementById("seleccionar-fresa")
 
 class BuscarSeleccion{
     
@@ -348,10 +379,5 @@ class BuscarSeleccion{
         }
     }
 }
-
-/* NADA
-function eventoClick(event){
-    console.log(event)
-}*/
 
 
