@@ -27,6 +27,8 @@ const hielitosObject = {
 
 // FIN DE CREAR OBJETO PARA GUARDAR LOS HIELITOS
 
+
+
 let resultado = document.createElement("h2");
 resultado.innerText = "Resultado:";
 
@@ -44,42 +46,45 @@ let reciboMarco = `
 <div class= "card-body">
 <h5 class= "card-title"> RECIBO </h5>
 <p>
-<div id="total-fresa">
+<div class="total-individual">
 Hielitos de fresa vendidos: ${hielitosObject.fresa}
 </div>
-<div>
+<div class="total-individual">
 Hielitos de oreo vendidos: ${hielitosObject.oreo}
 </div>
-<div>
+<div class="total-individual">
 Hielitos de jamaica vendidos: ${hielitosObject.jamaica}
 </div>
-<div>
+<div class="total-individual">
 Hielitos de rompope vendidos: ${hielitosObject.rompope}
 </div>
-<div>
+<div class="total-individual">
 Hielitos de limon vendidos: ${hielitosObject.limon}
 </div>
-<div>
+<div class="total-individual">
 Hielitos de mango vendidos: ${hielitosObject.mango}
 </div>
-<div>
+<div class="total-individual">
 Hielitos de galleta maria vendidos: ${hielitosObject.maria}
 </div>
-<div>
+<div class="total-individual">
 Hielitos de coco vendidos: ${hielitosObject.coco}
 </div>
 <div>
-Total vendidos: ${hielitosObject.suma}
+Total (Dinero obtenido): $${hielitosObject.suma}
 </div>
 </p>
 <button class="btn btn-primary" onclick="eventoClick(event)"> Descargar</button>
 </div>
 </div>`
 
+
 recibo.innerHTML = reciboMarco
 document.getElementById("recibos").append(recibo) //document.getElementById("recibo").innerHTML = "" BORRAR
 }
 // FIN DE LA CREACION DEL RECIBO DE LOS HIELITOS VENDIDOS
+
+
 
 // CREACION DE INPUTS  
 
@@ -201,8 +206,11 @@ function crearInput8(){
 // FIN DE CREACION DE INPUTS  
 
 let arrayCantidades = []
+let guardarCeros = []
 
-// PONER VALORES EN LOS INPUTS
+
+
+// PONER VALORES EN LOS INPUTS - ANTES DE CREAR RECIBO
 function modificarValores(event){
     //console.log(event)
     arrayCantidades = []
@@ -227,8 +235,8 @@ function modificarValores(event){
         hielitosObject.fresa = 0
     }
 
-   /*if(hielitosObject.fresa == "0"){
-        document.getElementById("total-fresa").innerHTML = ""
+  /*  if(!(hielitosObject.fresa == 0)){
+        document.getElementById("total-fresa").style.display = "block"
     }*/
 
     if(aparece2.innerHTML.includes("<fieldset>")){
@@ -305,12 +313,35 @@ function modificarValores(event){
     console.log(hielitosObject)
 
     crearRecibo()
-}
 
-function eliminarValores(event){
-}
+    /*for(let key in hielitosObject){
+        if(hielitosObject[key] == 0){
+            guardarCeros.push(key)
+        }
+    }
+    guardarCeros.pop()
+    console.log(guardarCeros)
+
+    for(borrarCeros of guardarCeros){
+        if(borrarCeros.includes("oreo")){
+            console.log(borrarCeros+"XD")
+        }
+    }*/
+eliminarValores()
+
 // FIN PONER VALORES EN LOS INPUTS
+function eliminarValores(){
+    const elementos = document.querySelectorAll('.total-individual')
 
+    elementos.forEach(function(div){
+        if(div.textContent.includes('vendidos: 0')){
+            div.style.display = 'none';
+        } else {
+            div.style.display = 'block';
+        }
+    });    
+}
+}
 
 // OBTENER EL BOOLEANO DE UN CHECKBOX
 
