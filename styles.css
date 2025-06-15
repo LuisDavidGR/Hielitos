@@ -1,7 +1,9 @@
 body{
     background-color: #d5bf86;
     font-family: sans-serif;
-
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
 }
 
 h1{
@@ -136,8 +138,21 @@ input{
 /*FIN ESTILOS DEL RECIBO*/
 
 
+.contenedor-navegacion{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
 
-
+.navegacion{
+    position: relative;
+    border-radius: 5px;
+    margin-top: 30px;
+    align-items: flex-end;
+    width: 100%;
+    padding: 15px;
+    background-color: #007ea7;
+}
 
 
 
