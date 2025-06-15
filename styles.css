@@ -1,11 +1,55 @@
 body{
     background-color: #d5bf86;
     font-family: sans-serif;
+
 }
+
+h1{
+    text-align: center;
+}
+
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+/*  OPCIONES PARA ESCOGER HIELITOS*/
+
+#seleccion-hielitos-formulario{
+    font-size: 16px;
+    width: 550px;
+    display: grid;
+    place-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 35px;
+    row-gap: 5px;
+}
+
+.seleccion{
+    display: flex;
+    justify-content: center;
+}
+
+.seleccion-hielito{
+    margin: 10px;
+    width: 40px;
+}
+
+/* FIN DE OPCIONES PARA ESCOGER HIELITOS*/
+
+
+
+/*INPUTS PARA CALCULAR LAS VENTAS*/
+
 form{
     background-color: #f1f0cc;
     border-radius: 7px;
 }
+
 fieldset{
     border: 1px solid #000;
     border-radius: 7px;
@@ -25,13 +69,8 @@ input{
 }
 
 
-.nombre-seleccion{
-    margin: 0;
-}
-
-.seleccion-hielito{
-    margin: 0;
-    width: 40px;
+#inputs-contenedor{
+    width: 525px;
 }
 
 .input-focus:focus{
@@ -53,16 +92,25 @@ input{
     font-size: 16px;
 }
 
-#borrar{
-    background-color: red;
+/*FIN DE INPUTS PARA CALCULAR LAS VENTAS*/
+
+
+
+
+
+
+/*ESTILOS DEL RECIBO*/
+
+#recibos-contenedor{
+    display: flex;
+    justify-content: center;
 }
 
-.card{
-    border: 2px solid #000;
-    border-radius: 15px;
-    width: 50%;
-    height: 250px;
-    background-color: #fff;
+#recibos{
+    width: 540px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
 }
 
 .card-title{
@@ -70,4 +118,37 @@ input{
     margin-left: 0;
     font-size: 20px;
 }
+
+.card{
+    font-size: 14px;
+    border: 2px solid #000;
+    border-radius: 15px;
+    width: 245px;
+    height: 270px;
+    background-color: #fff;
+    text-align: center;
+}
+
+#dinero{
+    font-weight: 800;
+}
+
+/*FIN ESTILOS DEL RECIBO*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -10,41 +10,42 @@
 <body>
 
     <header>
-        <h1>Venta de hielitos</h1>
+        <h1>VENTA DE HIELITOS TU</h1>
         <div class="seleccion">
-            <label class="nombre-seleccion">Hielito de fresa
-                <input id="seleccionar-fresa" type="checkbox" name="" class="seleccion-hielito" onchange="BuscarSeleccion.buscarSeleccionFresa(event)">
-            </label>
-            <label class="nombre-seleccion">Hielito de oreo
-                <input id="seleccionar-oreo" type="checkbox" name="" class="seleccion-hielito" onchange="BuscarSeleccion.buscarSeleccionOreo(event)">
-            </label>
-            <label class="nombre-seleccion">Hielito de jamaica
-                <input id="seleccionar-jamaica" type="checkbox" name="" class="seleccion-hielito" onchange="BuscarSeleccion.buscarSeleccionJamaica(event)">
-            </label>
-        </div>
-             <label class="nombre-seleccion">Hielito de rompope
-                <input id="seleccionar-rompope" type="checkbox" name="" class="seleccion-hielito" onchange="BuscarSeleccion.buscarSeleccionRompope(event)">
-             </label>
-             <label class="nombre-seleccion">Hielito de limon
-                <input id="seleccionar-limon" type="checkbox" name="" class="seleccion-hielito" onchange="BuscarSeleccion.buscarSeleccionLimon(event)">
-            </label>
-            <label class="nombre-seleccion">Hielito de mango
-                <input id="seleccionar-mango" type="checkbox" name="" class="seleccion-hielito" onchange="BuscarSeleccion.buscarSeleccionMango(event)">
-            </label>
-        <div>
-            <label class="nombre-seleccion">Hielito de galleta maria
-                <input id="seleccionar-maria" type="checkbox" name="" class="seleccion-hielito" onchange="BuscarSeleccion.buscarSeleccionMaria(event)">
-            </label>
-            <label class="nombre-seleccion">Hielito de coco
-                <input id="seleccionar-coco" type="checkbox" name="" class="seleccion-hielito" onchange="BuscarSeleccion.buscarSeleccionCoco(event)">
-            </label>
+            <form id="seleccion-hielitos-formulario">
+                <label class="nombre-seleccion">
+                    <input id="seleccionar-fresa" type="checkbox" name="" class="seleccion-hielito" onchange="BuscarSeleccion.buscarSeleccionFresa(event)">Hielito Fresa
+                </label>
+
+                <label class="nombre-seleccion">
+                    <input id="seleccionar-oreo" type="checkbox" name="" class="seleccion-hielito" onchange="BuscarSeleccion.buscarSeleccionOreo(event)">Hielito de oreo
+                </label>
+                <label class="nombre-seleccion">
+                    <input id="seleccionar-jamaica" type="checkbox" name="" class="seleccion-hielito" onchange="BuscarSeleccion.buscarSeleccionJamaica(event)">Hielito de jamaica
+                </label>
+       
+                <label class="nombre-seleccion">
+                   <input id="seleccionar-rompope" type="checkbox" name="" class="seleccion-hielito" onchange="BuscarSeleccion.buscarSeleccionRompope(event)">Hielito de rompope
+                 </label>
+                 <label class="nombre-seleccion">
+                    <input id="seleccionar-limon" type="checkbox" name="" class="seleccion-hielito" onchange="BuscarSeleccion.buscarSeleccionLimon(event)">Hielito de limon
+                </label>
+                <label class="nombre-seleccion">
+                    <input id="seleccionar-mango" type="checkbox" name="" class="seleccion-hielito" onchange="BuscarSeleccion.buscarSeleccionMango(event)">Hielito de mango
+                </label>
+                <label class="nombre-seleccion">
+                    <input id="seleccionar-maria" type="checkbox" name="" class="seleccion-hielito" onchange="BuscarSeleccion.buscarSeleccionMaria(event)">Hielito de galleta maria
+                </label>
+                <label class="nombre-seleccion">
+                    <input id="seleccionar-coco" type="checkbox" name="" class="seleccion-hielito" onchange="BuscarSeleccion.buscarSeleccionCoco(event)">Hielito de coco
+                </label>
+            </form>
         </div>
     </header>
 
     <main>
-        <label>Calcula los hielitos vendidos</label>
- 
-        <section>
+        <label></label>
+        <section id="inputs-contenedor">
             <h2>Rellena los campos</h2>
 
             <form id="formulario" method="post" onsubmit="modificarValores(event)">
@@ -68,13 +69,18 @@
             </form>
         </section>
 
-        <div id="recibos">
 
-        </div>
-    </main>
-    <nav>
+    </main>    
+    <div id="recibos-contenedor">
+    <div id="recibos">
+    </div>
+    </div>
+<!--
+        <nav>
         <a href="#calcular-section">Calcular</a>
         <a href="#historial-section">Historial</a>
     </nav>
+-->
+
 </body>
 </html>

@@ -39,7 +39,7 @@ acomodar.appendChild(resultado);
 // CREACION DEL RECIBO DE LOS HIELITOS VENDIDOS
 function crearRecibo(){
 let recibo = document.createElement("div")
-recibo.className="enEspera"
+recibo.className="acumulador-recibos"
 
 let reciboMarco = `
 <div class= "card">
@@ -70,7 +70,7 @@ Hielitos de galleta maria vendidos: ${hielitosObject.maria}
 <div class="total-individual">
 Hielitos de coco vendidos: ${hielitosObject.coco}
 </div>
-<div>
+<div id="dinero">
 Total (Dinero obtenido): $${hielitosObject.suma}
 </div>
 </p>
