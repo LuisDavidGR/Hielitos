@@ -10,12 +10,12 @@ class Sabores{
 }
 */
 
-//let sabores = new Sabores()
 
-// CREAR OBJETO PARA GUARDAR LOS HIELITOS
 
-const hielitosObject = {
-    fresa: 0,
+// OBJETO PARA GUARDAR EL PRECIO DE LOS HIELITOS
+
+export const hielitosObject = {
+    fresa: 0, // ESTADO DEFAULT DE TODOS LOS HIELITOS, PRECIO
     oreo: 0,
     jamaica: 0,
     rompope: 0,
@@ -25,29 +25,34 @@ const hielitosObject = {
     coco: 0,
 }
 
-// FIN DE CREAR OBJETO PARA GUARDAR LOS HIELITOS
+// FIN DEL OBJETO
 
 
+// H2 PARA RESALTAR LA ZONA EN DONDE SE PONDRAN LOS RECIBOS
 
-let resultado = document.createElement("h2");
-resultado.innerText = "Resultado:";
+let resultado = document.createElement("h2"); // crea un elemento h2
+resultado.innerText = "Resultado:"; // pone el texto al h2 creado
 
-
-let acomodar = document.querySelector("section");
+let acomodar = document.querySelector("section"); 
 acomodar.appendChild(resultado);
+
+//---
 
 // CREACION DEL RECIBO DE LOS HIELITOS VENDIDOS
 function crearRecibo(){
-let recibo = document.createElement("div")
+
+let recibo = document.createElement("div") // 
 recibo.className="acumulador-recibos"
 
-let reciboMarco = `
+// RECIBO CON TODOS LOS SABORES DE HIELITO QUE FUERON VENDIDOS
+
+let reciboMarco = ` 
 <div class= "card">
 <div class= "card-body">
 <h5 class= "card-title"> RECIBO </h5>
 <p>
 <div class="total-individual">
-Hielitos de fresa vendidos: ${hielitosObject.fresa}
+Hielitos de fresa vendidos: ${hielitosObject.fresa} <!-- Valor del objeto que dependera si hubo vendidos o no -->
 </div>
 <div class="total-individual">
 Hielitos de oreo vendidos: ${hielitosObject.oreo}
@@ -78,15 +83,20 @@ Total (Dinero obtenido): $${hielitosObject.suma}
 </div>
 </div>`
 
+//---
 
-recibo.innerHTML = reciboMarco
+recibo.innerHTML = reciboMarco // creacion de html del recibo
 document.getElementById("recibos").append(recibo) //document.getElementById("recibo").innerHTML = "" BORRAR
+//html que sera insertado en el div recibos del index
+
+
 }
+
 // FIN DE LA CREACION DEL RECIBO DE LOS HIELITOS VENDIDOS
 
 
 
-// CREACION DE INPUTS  
+// CREACION DE INPUTS PARA INGRESAR LA CANTIDAD QUE FUERON VENDIDOS
 
 function crearInput(){
 
@@ -203,6 +213,7 @@ function crearInput8(){
     newInput.innerHTML = insertarInput
     document.getElementById("contenedor-input8").append(newInput)
 }
+
 // FIN DE CREACION DE INPUTS  
 
 let arrayCantidades = []
@@ -211,13 +222,15 @@ let guardarCeros = []
 
 
 // PONER VALORES EN LOS INPUTS - ANTES DE CREAR RECIBO
+// FUNCION PARA AÑADIR EL VALOR DE LOS INPUTS EN EL OBJETO
+
 function modificarValores(event){
     //console.log(event)
     arrayCantidades = []
 
     event.preventDefault() //Detiene la accion de refrescar
      
-    let aparece = document.getElementById("contenedor-input")
+    let aparece = document.getElementById("contenedor-input") // variable que almacena un elemento id del index
     let aparece2 = document.getElementById("contenedor-input2")
     let aparece3 = document.getElementById("contenedor-input3")
     let aparece4 = document.getElementById("contenedor-input4")
@@ -226,13 +239,13 @@ function modificarValores(event){
     let aparece7 = document.getElementById("contenedor-input7")
     let aparece8 = document.getElementById("contenedor-input8")
 
-    if(aparece.innerHTML.includes("<fieldset>")){
-        hielitosObject.fresa = document.getElementById("fresa").value
-        cantidadFresa = Number(hielitosObject.fresa)
-        arrayCantidades.push(cantidadFresa)
-    } else if(!(aparece.innerHTML.includes("<fieldset>"))){
-        document.getElementById("contenedor-input").innerHTML = ""
-        hielitosObject.fresa = 0
+    if(aparece.innerHTML.includes("<fieldset>")){ // con base a la variable correspondiente se hace una evaluacion 
+        hielitosObject.fresa = document.getElementById("fresa").value // el valor obtenido del input se guardara en el objeto creado al principio
+        cantidadFresa = Number(hielitosObject.fresa) // el valor del objeto se convierte a numero y a partir de eso se almacena en una variable
+        arrayCantidades.push(cantidadFresa) //la cantidad ahora puedo ser añadida al array de cantidades
+    } else if(!(aparece.innerHTML.includes("<fieldset>"))){ // Contradiciendo el primer comentario 
+        document.getElementById("contenedor-input").innerHTML = "" //Si el input no existe se añadira un espacio en blanco
+        hielitosObject.fresa = 0 // su valor en el objeto sera el de 0
     }
 
   /*  if(!(hielitosObject.fresa == 0)){
@@ -302,16 +315,16 @@ function modificarValores(event){
         hielitosObject.coco = 0
     }
         
-    let suma = 0
+    let suma = 0 // variable que sumara cada uno de las opciones que fueron marcadas como true y se ingreso valrores
     for(let i = 0; i < arrayCantidades.length; i++){
         suma += arrayCantidades[i]*20
     }
 
     console.log(arrayCantidades)
-
+    
     hielitosObject.suma = suma   //(cantidadFresa + cantidadOreo + cantidadJamaica + cantidadRompope + cantidadLimon + cantidadMango + cantidadMaria + cantidadCoco)
     console.log(hielitosObject)
-
+    // propiedad del objeto que mostrara el total de dinero generado
     crearRecibo()
 
     /*for(let key in hielitosObject){
@@ -330,17 +343,22 @@ function modificarValores(event){
 eliminarValores()
 
 // FIN PONER VALORES EN LOS INPUTS
+
+// FUNCION QUE ELIMINA DEL RECIBO TODOS AQUELLOS HIELITOS QUE NO FUERON SELECCIONADOS OSEA CON EL VALOR 0
 function eliminarValores(){
     const elementos = document.querySelectorAll('.total-individual')
-
+    // cilo que recorrera todos los div que tengan la clase total-individual (principio del codigo)
     elementos.forEach(function(div){
-        if(div.textContent.includes('vendidos: 0')){
-            div.style.display = 'none';
+        if(div.textContent.includes('vendidos: 0')){ //Si el texto del recibo aparece de esta forma
+            div.style.display = 'none'; // su display sera none osea desaparecera 
         } else {
-            div.style.display = 'block';
+            div.style.display = 'block'; // pero si no es asi su display sera normal y aparecera
         }
     });    
-}
+} 
+
+//---
+
 }
 
 // OBTENER EL BOOLEANO DE UN CHECKBOX
@@ -350,6 +368,8 @@ function eliminarValores(){
 //  FIN DE OBTENER EL BOOLEANO DE UN CHECKBOX
 
 
+
+// CLASE (EXPERIMENTAL PORQUE NO SIRVE PARA NADA, APRENDIENDO XD) QUE VALIDA SI EL CHECKBOX DEPENDIENDO DE SU ESTADO LLAMARA A LA FUNCION PARA CREAR INPUTS
 class BuscarSeleccion{
     
     constructor(selectorFresa){
@@ -357,12 +377,12 @@ class BuscarSeleccion{
     }
 
     static buscarSeleccionFresa(event){
-        let verificar = document.getElementById("seleccionar-fresa") 
+        let verificar = document.getElementById("seleccionar-fresa") // si el checkbox con este id aparece como true
         if(verificar.checked == true ){
-            crearInput()
+            crearInput() // se llamara a la funcion para que cree este input
  
         } else if(verificar.checked == false){
-            document.getElementById("contenedor-input").innerHTML = ""
+            document.getElementById("contenedor-input").innerHTML = "" //Al contrario, este borrara todo lo que este adentro del input con el id correspondiente
         
         }
 
