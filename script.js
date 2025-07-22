@@ -14,7 +14,7 @@ class Sabores{
 
 // OBJETO PARA GUARDAR EL PRECIO DE LOS HIELITOS
 
-export const hielitosObject = {
+const hielitosObject = {
     fresa: 0, // ESTADO DEFAULT DE TODOS LOS HIELITOS, PRECIO
     oreo: 0,
     jamaica: 0,
