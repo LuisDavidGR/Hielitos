@@ -14,6 +14,7 @@ class Sabores{
 
 // OBJETO PARA GUARDAR EL PRECIO DE LOS HIELITOS
 
+
 const hielitosObject = {
     fresa: 0, // ESTADO DEFAULT DE TODOS LOS HIELITOS, PRECIO
     oreo: 0,
@@ -324,6 +325,8 @@ function modificarValores(event){
     
     hielitosObject.suma = suma   //(cantidadFresa + cantidadOreo + cantidadJamaica + cantidadRompope + cantidadLimon + cantidadMango + cantidadMaria + cantidadCoco)
     console.log(hielitosObject)
+    sessionStorage.setItem("enviarValores",suma)
+
     // propiedad del objeto que mostrara el total de dinero generado
     crearRecibo()
 

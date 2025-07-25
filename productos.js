@@ -1,3 +1,9 @@
+let recibirValores = sessionStorage.getItem("enviarValores")
+if(recibirValores == null){
+  recibirValores = 0
+} 
+console.log(recibirValores);
+
 //---------------------------------------------------
 
 
@@ -80,6 +86,17 @@ console.log(sumaCostos);
     let  mostrarTotal = document.createElement("h2")
      mostrarTotal.innerHTML = "Total de compras: "+sumaCostos
      document.getElementById("resultado").append(mostrarTotal)
+
+
+     let restarResultados = recibirValores - sumaCostos
+
+    if(restarResultados < 0){
+      restarResultados = restarResultados * -1
+    }
+
+     let  mostrarTotalHielitos = document.createElement("h2")
+     mostrarTotalHielitos.innerHTML = "Total de hielitos: "+recibirValores+", restando valores el total es de: "+restarResultados
+     document.getElementById("resultado").append(mostrarTotalHielitos)
 }
 
 
