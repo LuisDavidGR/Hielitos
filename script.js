@@ -48,7 +48,7 @@ recibo.className="acumulador-recibos"
 // RECIBO CON TODOS LOS SABORES DE HIELITO QUE FUERON VENDIDOS
 
 let reciboMarco = ` 
-<div class= "card">
+<div id="descargarDiv" class= "card">
 <div class= "card-body">
 <h5 class= "card-title"> RECIBO </h5>
 <p>
@@ -80,16 +80,17 @@ Hielitos de coco vendidos: ${hielitosObject.coco}
 Total (Dinero obtenido): $${hielitosObject.suma}
 </div>
 </p>
-<button class="btn btn-primary" onclick="eventoClick(event)"> Descargar</button>
 </div>
 </div>`
 
+let descargarRecibo = `
+<button class="btn btn-primary" onclick="convertirImagen()"> Descargar</button>
+`
 //---
 
 recibo.innerHTML = reciboMarco // creacion de html del recibo
 document.getElementById("recibos").append(recibo) //document.getElementById("recibo").innerHTML = "" BORRAR
-//html que sera insertado en el div recibos del index
-
+//html que sera insertado en el div recibos del index  
 
 }
 
@@ -329,7 +330,7 @@ function modificarValores(event){
 
     // propiedad del objeto que mostrara el total de dinero generado
     crearRecibo()
-
+    let historialDeRecibos = document.getElementById("recibos")
     /*for(let key in hielitosObject){
         if(hielitosObject[key] == 0){
             guardarCeros.push(key)
@@ -344,6 +345,7 @@ function modificarValores(event){
         }
     }*/
 eliminarValores()
+sessionStorage.setItem("reciboHistorial",historialDeRecibos.innerHTML)
 
 // FIN PONER VALORES EN LOS INPUTS
 
@@ -469,3 +471,14 @@ class BuscarSeleccion{
 }
 
 
+function convertirImagen() {
+    const elemento = document.getElementById("descargarDiv");
+
+    html2canvas(elemento).then(canvas => {
+        // Crear un enlace para descargar la imagen
+        const enlace = document.createElement("a");
+        enlace.download = "imagen.png"; // Nombre del archivo
+        enlace.href = canvas.toDataURL("image/png"); // Formato PNG
+        enlace.click(); // Simular clic para descargar
+    });
+}
