@@ -41,9 +41,12 @@ acomodar.appendChild(resultado);
 
 // CREACION DEL RECIBO DE LOS HIELITOS VENDIDOS
 function crearRecibo(){
+let masRecienteRecibo = document.getElementById("recibos")
+masRecienteRecibo.innerHTML = ""
 
 let recibo = document.createElement("div") // 
 recibo.className="acumulador-recibos"
+recibo.id = "enviarHistorial"
 
 // RECIBO CON TODOS LOS SABORES DE HIELITO QUE FUERON VENDIDOS
 
@@ -330,7 +333,6 @@ function modificarValores(event){
 
     // propiedad del objeto que mostrara el total de dinero generado
     crearRecibo()
-    let historialDeRecibos = document.getElementById("recibos")
     /*for(let key in hielitosObject){
         if(hielitosObject[key] == 0){
             guardarCeros.push(key)
@@ -345,7 +347,17 @@ function modificarValores(event){
         }
     }*/
 eliminarValores()
-sessionStorage.setItem("reciboHistorial",historialDeRecibos.innerHTML)
+let primerHistorialDeRecibos = document.getElementById("enviarHistorial")
+
+let historalRecibos = sessionStorage.getItem("historalRecibos")
+
+if(historalRecibos){
+    historalRecibos += primerHistorialDeRecibos.outerHTML
+} else {
+    historalRecibos = primerHistorialDeRecibos.outerHTML
+}
+
+sessionStorage.setItem("historalRecibos", historalRecibos)
 
 // FIN PONER VALORES EN LOS INPUTS
 
