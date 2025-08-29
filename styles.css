@@ -117,22 +117,30 @@ input{
 
 .card-title{
     text-align: center;
-    margin-left: 0;
-    font-size: 20px;
+    margin: 0;
+    margin-top: 15px;
+    padding: 0;
+    font-size: 30px;
+    font-weight: 500;
+
 }
 
 .card{
-    font-size: 14px;
+    font-size: 20px;
     border: 2px solid #000;
-    border-radius: 15px;
+    border-radius: 7px;
     width: 245px;
     height: 270px;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     background-color: #fff;
     text-align: center;
 }
 
 #dinero{
-    font-weight: 800;
+    margin-top: 20px;    
+    font-weight: 500;
 }
 
 /*FIN ESTILOS DEL RECIBO*/

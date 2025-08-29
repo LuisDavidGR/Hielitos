@@ -489,7 +489,7 @@ function convertirImagen() {
     html2canvas(elemento).then(canvas => {
         // Crear un enlace para descargar la imagen
         const enlace = document.createElement("a");
-        enlace.download = "imagen.png"; // Nombre del archivo
+        enlace.download = "Recibo.png"; // Nombre del archivo
         enlace.href = canvas.toDataURL("image/png"); // Formato PNG
         enlace.click(); // Simular clic para descargar
     });
