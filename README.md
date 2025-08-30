@@ -7,7 +7,7 @@
 ![04-primera-fase](Screenshots/04-Screenshot.jpg)
 ---
 ## Segunda fase
-![05-primera-fase](Screenshots/05-Screenshot.jpg)
-![06-primera-fase](Screenshots/06-Screenshot.jpg)
-![07-primera-fase](Screenshots/07-Screenshot.jpg)
+![05-primera-fase](Screenshots/05-Inicio-Screenshot.jpg)
+![06-primera-fase](Screenshots/06-Inicio-Screenshot.jpg)
+![07-primera-fase](Screenshots/07-Inicio-Screenshot.jpg)
 ---
