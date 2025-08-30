@@ -49,11 +49,22 @@ recibo.className="acumulador-recibos"
 recibo.id = "enviarHistorial"
 
 // RECIBO CON TODOS LOS SABORES DE HIELITO QUE FUERON VENDIDOS
+    const miFecha = new Date()
+    const año = miFecha.getFullYear()
+    const mes = String(miFecha.getMonth() + 1).padStart(2, '0')
+    const dia = String(miFecha.getDate()).padStart(2, '0')
+    let hora =  miFecha.toLocaleTimeString() 
+
+    const fechaFormateada = `${año}-${mes}-${dia}`;
+
+
+
 
 let reciboMarco = ` 
 <div id="descargarDiv" class= "card">
 <div class= "card-body">
-<h5 class= "card-title"> RECIBO </h5>
+<h5 class= "card-title"> RECIBO ${fechaFormateada}</h5>
+<span>Hora de creación: ${hora}</span>
 <p>
 <div class="total-individual">
 Hielitos de fresa vendidos: ${hielitosObject.fresa} <!-- Valor del objeto que dependera si hubo vendidos o no -->
