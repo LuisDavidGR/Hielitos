@@ -87,16 +87,23 @@
     <div id="recibos">
     </div>
     </div>
-    <button class="boton" onclick="convertirImagen()"> Descargar</button>
+    <button id="boton-descargar" class="boton" onclick="convertirImagen()"> Descargar</button>
 <!-- DESPLAZAMIENTO DE LAS SECCIONES DE LA APLICACION-->
 
     <nav class="contenedor-navegacion">
-        <div class="navegacion">
-            <a href="index.html">Inicio</a>
+        <a href="index.html" class="nav-item">
+          <img src="../Icons/file-text.svg" alt="Inicio">
+          <!--<span class="label">Inicio</span>-->
+        </a>
+        <a href="productos.html" class="nav-item">
+          <img src="../Icons/shopping-cart.svg">
+        </a>
+        <a href="historial.html" class="nav-item">
+          <img src="../Icons/clock.svg">
+        </a>
+        <!--<a href="index.html">Inicio</a>
             <a href="productos.html">Calcular</a>
-            <a href="historial.html">Historial</a>
-        </div>
-        
+            <a href="historial.html">Historial</a>--> 
     </nav>
 
 

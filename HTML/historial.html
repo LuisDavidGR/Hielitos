@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
-    <link rel="stylesheet" type="text/css" href="../CSS/styles.css"/> 
+    <link rel="stylesheet" type="text/css" href="../CSS/historial.css"/> 
     <script src="../JS/historial.js" defer></script>
 
 </head>
@@ -22,10 +22,17 @@
 <button onclick="borrarHistorial()">Borrar historial</button>
 
     <nav class="contenedor-navegacion">
-        <div class="navegacion">
-            <a href="index.html">Inicio</a>
-            <a href="productos.html">Calcular</a>
-        </div>
+        <a href="index.html" class="nav-item">
+          <img src="../Icons/file-text.svg">
+          <!--<span class="label">Inicio</span>-->
+        </a>
+        <a href="productos.html" class="nav-item">
+          <img src="../Icons/shopping-cart.svg">
+        </a>
+        <a href="historial.html" class="nav-item">
+          <img src="../Icons/clock.svg">
+        </a>
     </nav>
+
 </body>
 </html>

@@ -1,9 +1,10 @@
 body{
-    background-color: #d5bf86;
+    background-color: #84b6f4;
     font-family: sans-serif;
     display: grid;
     min-height: 100dvh;
     grid-template-rows: auto 1fr auto;
+    margin: 0;
 }
 
 h1{
@@ -48,7 +49,7 @@ main{
 /*INPUTS PARA CALCULAR LAS VENTAS*/
 
 form{
-    background-color: #f1f0cc;
+    background-color: #c4dafa;
     border-radius: 7px;
 }
 
@@ -90,8 +91,14 @@ input{
     height: 35px;
     margin: 10px 0 10px 6px;
     border-radius: 5px;
-    border: 2px solid #000;
+    border: 1.5px solid #000;
     font-size: 16px;
+}
+
+#boton-descargar{
+    margin-left: 30px;
+    background-color: #39b310f5;
+    margin-bottom: 35px;
 }
 
 /*FIN DE INPUTS PARA CALCULAR LAS VENTAS*/
@@ -146,24 +153,54 @@ input{
 /*FIN ESTILOS DEL RECIBO*/
 
 
-.contenedor-navegacion{
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+
+.contenedor-navegacion {
+  position: sticky;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #007bff;
+  padding: 8px 0;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-top: 1px solid #e0e0e0;
+  z-index: 2;
 }
 
-.navegacion{
-    position: relative;
-    border-radius: 5px;
-    margin-top: 30px;
-    align-items: flex-end;
-    width: 100%;
-    padding: 15px;
-    background-color: #007ea7;
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #666;
+  padding: 5px;
 }
 
+.nav-item.active {
+  color: #007bff; /* Color para el item activo */
+}
 
+.icon {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
 
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* Para dispositivos móviles */
+@media (max-width: 768px) {
+  .bottom-nav {
+    padding: 10px 0;
+  }
+  
+  .icon {
+    font-size: 24px;
+  }
+}
 
 
 

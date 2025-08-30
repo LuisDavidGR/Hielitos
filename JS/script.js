@@ -87,7 +87,7 @@ Total (Dinero obtenido): $${hielitosObject.suma}
 </div>`
 
 let descargarRecibo = `
-<button class="btn btn-primary" onclick="convertirImagen()"> Descargar</button>
+<button  class="btn btn-primary" onclick="convertirImagen()"> Descargar</button>
 `
 //---
 
