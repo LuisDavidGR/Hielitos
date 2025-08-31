@@ -10,21 +10,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
 
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="../JS/historial.js" defer></script>
 
 </head>
 <body>
+
 <h1>HISTORIAL</h1>
 
-<main>
-    <div id="recibos-contenedor">
-    <div id="recibos">
-    </div>
-    </div>
-    <button class="boton" onclick="convertirImagen()"> Descargar</button>
-</main>
+    <main>
+        <div id="recibos-contenedor">
+        <div id="div-vacio"></div>
+        <div id="recibos">
 
-<button onclick="borrarHistorial()">Borrar historial</button>
+        </div>
+        </div>
+
+        <div id="contenedor-botones">
+        <button id="boton-descargar" class="boton" onclick="descargarRecibos()"> <img src="../Icons/download.svg"> </button>
+        <button id="borrar-historial" class="boton" onclick="borrarHistorial()"> <img src="../Icons/trash.svg">  </button>
+        </div>
+
+    </main>
+
 
     <nav class="contenedor-navegacion">
         <a href="index.html" class="nav-item">
